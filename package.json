@@ -1,0 +1,25 @@
+{
+  "name": "rtk-producers",
+  "version": "1.0.0",
+  "author": "Matt Tingen <matt.tingen@gmail.com>",
+  "license": "MIT",
+  "exports": "./dist/index.modern.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && microbundle build -i src/index.ts",
+    "ts": "tsc --noEmit --watch"
+  },
+  "devDependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "immer": "^9.0.6",
+    "microbundle": "^0.13.3",
+    "typescript": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
+    "immer": "^9"
+  }
+}
