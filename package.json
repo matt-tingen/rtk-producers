@@ -20,12 +20,16 @@
     "clean": "rm -rf dist",
     "build": "microbundle",
     "ts": "tsc --noEmit",
-    "prepare": "yarn ts && yarn clean && yarn build"
+    "lint": "eslint --ext .ts src",
+    "prepare": "yarn ts && yarn lint && yarn clean && yarn build"
   },
   "devDependencies": {
+    "@matt-tingen/eslint-config": "^0.4.2",
     "@reduxjs/toolkit": "^1.6.1",
+    "eslint": "^8.8.0",
     "immer": "^9.0.6",
     "microbundle": "^0.14.2",
+    "prettier": "^2.5.1",
     "typescript": "^4.4.3"
   },
   "peerDependencies": {

@@ -45,7 +45,6 @@ const createCaseReducer = <
   producersFactory: F,
 ): ProducedCaseReducer<Parameters<ReturnType<F>[P]>, S> => ({
   prepare: (...args: Parameters<ReturnType<F>[P]>) => ({ payload: args }),
-  /* eslint-disable no-param-reassign */
   reducer: (
     state: Draft<S>,
     { payload }: PayloadAction<Parameters<ReturnType<F>[P]>>,
@@ -60,7 +59,6 @@ const createCaseReducer = <
 
     if (typeof result !== 'undefined') return result;
   },
-  /* eslint-enable */
 });
 
 export const createCaseReducers = <
@@ -72,6 +70,7 @@ export const createCaseReducers = <
   initialState: S,
 ): ProducedCaseReducers<S, K, F> => {
   let producers: ReturnType<F>;
+
   produce(initialState, (state) => {
     producers = producersFactory(state) as ReturnType<F>;
   });
